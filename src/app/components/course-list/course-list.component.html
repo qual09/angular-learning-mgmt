@@ -14,12 +14,15 @@
         <div>
           Filter by:
           <select name="filter">
-            <option value="status">Course Status</option>
+            <option value="">Course Status</option>
+            <option value="DRAFT">DRAFT</option>
+            <option value="PUBLISHED">PUBLISHED</option>
           </select>
           <a href="#">Clear</a>
         </div>
         <div class="mr-3">
-          <input type="text" class="form-control" placeholder="Search courses">
+          <input type="text" class="form-control" placeholder="Search courses" [(ngModel)]="searchTerm"
+            (ngModelChange)="search()">
         </div>
       </div>
 
@@ -35,23 +38,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr [routerLink]="['/courseDetails', 1]">
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+            <tr *ngFor="let course of courseList" [routerLink]="['/courseDetails', 1]">
+              <th scope="row">{{course.id}}</th>
+              <td>{{course.imageUrl}}</td>
+              <td>{{course.name}}</td>
+              <td>{{course.status}}</td>
             </tr>
           </tbody>
         </table>
