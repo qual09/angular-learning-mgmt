@@ -12,6 +12,7 @@ export class CourseListComponent implements OnInit {
   courseList: Course[];
   courseListFiltered: Course[];
   searchTerm: string;
+  filterStatusTerm: string = "";
 
   constructor(private courseService: CourseService) { }
 
@@ -26,10 +27,18 @@ export class CourseListComponent implements OnInit {
     });
   }
 
+  clearFilter() {
+    this.filterStatusTerm = "";
+    this.searchTerm = "";
+  }
+
   search() {
     let term = this.searchTerm;
-    this.courseList = this.courseListFiltered.filter(function (courseElement) {
-      let allProperties = courseElement.id + courseElement.status + courseElement.name;
+    this.courseList = this.courseListFiltered.filter((courseElement) => {
+      let allProperties = courseElement.status + courseElement.name;
+      courseElement.instructors.forEach(instructor => {
+        allProperties += instructor.name;
+      });
       return allProperties.toLowerCase().includes(term.toLowerCase());
     });
   }

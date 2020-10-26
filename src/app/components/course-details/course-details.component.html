@@ -9,29 +9,33 @@
   <div class="row">
     <div class="card card-body">
 
-      <form class="courseDetailsData">
-        <div class="form-group">
-          <label for="courseName">Course Name</label>
-          <input type="text" class="form-control" name="courseName" [(ngModel)]="course.name">
-        </div>
-        <div class="form-group">
-          <label for="courseStatus">Course Status</label>
-          <select name="courseStatus" [(ngModel)]="course.status">
-            <option value=""></option>
-            <option value="DRAFT">DRAFT</option>
-            <option value="PUBLISHED">PUBLISHED</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="image">Course card image</label>
-          <input type="text" class="form-control" name="image" [(ngModel)]="course.imageUrl">
-        </div>
-        <div class="form-group">
-          <label for="instructor">Instructor</label>
-          <select name="instructor">
-            <option value="John">John</option>
-          </select>
-        </div>
+      <form>
+        <fieldset class="courseDetailsData" [disabled]="true">
+          <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <input type="text" class="form-control" name="courseName" [(ngModel)]="course.name">
+          </div>
+          <div class="form-group">
+            <label for="courseStatus">Course Status</label>
+            <select name="courseStatus" [(ngModel)]="course.status">
+              <option value=""></option>
+              <option value="DRAFT">DRAFT</option>
+              <option value="PUBLISHED">PUBLISHED</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="image">Course card image</label>
+            <div class="card">
+              <img src="{{course.imageUrl}}" alt="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="instructor">Instructor</label>
+            <select name="instructor">
+              <option value="John">John</option>
+            </select>
+          </div>
+        </fieldset>
       </form>
 
     </div>

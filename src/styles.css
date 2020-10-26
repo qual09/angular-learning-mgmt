@@ -2,6 +2,10 @@ body {
   background-color: #eeeeee;
 }
 
+input, select, .form-control {
+  background-color: #eeeeee;
+}
+
 select {
   display: block;
   width: 100%;
@@ -11,7 +15,6 @@ select {
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #eeeeee;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: .25rem;

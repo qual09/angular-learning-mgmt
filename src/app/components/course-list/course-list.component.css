@@ -1,10 +1,10 @@
+thead {
+  background-color: #eeeeee;
+}
+
 .courseListTools {
   display: flex;
   justify-content: space-between;
-}
-
-thead {
-  background-color: #eeeeee;
 }
 
 .courseListTools select {
@@ -17,6 +17,8 @@ thead {
   margin-left: 0.5em;
 }
 
-.courseListTools input {
-  background-color: #eeeeee;
+.statusBox {
+  border: 1px solid teal;
+  border-radius: 0.2em;
+  padding: 0.1em 0.4em;
 }

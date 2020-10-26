@@ -13,12 +13,12 @@
       <div class="row mb-3 ml-0 courseListTools">
         <div>
           Filter by:
-          <select name="filter">
+          <select [(ngModel)]="filterStatusTerm" name="filter">
             <option value="">Course Status</option>
             <option value="DRAFT">DRAFT</option>
             <option value="PUBLISHED">PUBLISHED</option>
           </select>
-          <a href="#">Clear</a>
+          <a href="#" (click)="clearFilter()">Clear</a>
         </div>
         <div class="mr-3">
           <input type="text" class="form-control" placeholder="Search courses" [(ngModel)]="searchTerm"
@@ -38,11 +38,24 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let course of courseList" [routerLink]="['/courseDetails', 1]">
-              <th scope="row">{{course.id}}</th>
-              <td>{{course.imageUrl}}</td>
-              <td>{{course.name}}</td>
-              <td>{{course.status}}</td>
+            <tr *ngFor="let course of courseList">
+              <ng-container *ngIf="filterStatusTerm=='' || course.status === filterStatusTerm">
+                <th scope="row">{{course.id}}</th>
+                <td>
+                  <img src="{{course.imageUrl}}" alt="">
+                </td>
+                <td>
+                  <div class="row">
+                    <a [routerLink]="['/courseDetails', 1]">{{course.name}}</a>
+                  </div>
+                  <div class="row" *ngIf="course.instructors.length > 0">
+                    <strong>Instructors:</strong>&nbsp;
+                    <span *ngFor="let instructor of course.instructors">{{instructor.name}} &nbsp; &nbsp;
+                    </span>
+                  </div>
+                </td>
+                <td><span class="statusBox">{{course.status}}</span></td>
+              </ng-container>
             </tr>
           </tbody>
         </table>

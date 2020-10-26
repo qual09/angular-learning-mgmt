@@ -4,12 +4,10 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
-
 import { Course } from '../models/course';
-import { COURSES, COURSE } from '../mocks/mock-courses';
 
 // MOCK
-// import { COURSES } from '../mocks/mock-courses';
+import { COURSES, COURSE } from '../mocks/mock-courses';
 
 @Injectable({
   providedIn: 'root'
