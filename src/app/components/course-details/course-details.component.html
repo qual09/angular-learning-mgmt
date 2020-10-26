@@ -1,44 +1,50 @@
 <div class="container">
 
   <!-- Title -->
-  <div class="row text-center mb-2">
+  <div class="mb-2">
     <h2>Course <span class="courseName">{{course.name}}</span></h2>
   </div>
 
   <!-- Course Details -->
-  <div class="row">
-    <div class="card card-body">
-
-      <form>
-        <fieldset class="courseDetailsData" [disabled]="true">
-          <div class="form-group">
-            <label for="courseName">Course Name</label>
-            <input type="text" class="form-control" name="courseName" [(ngModel)]="course.name">
-          </div>
-          <div class="form-group">
-            <label for="courseStatus">Course Status</label>
-            <select name="courseStatus" [(ngModel)]="course.status">
-              <option value=""></option>
-              <option value="DRAFT">DRAFT</option>
-              <option value="PUBLISHED">PUBLISHED</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="image">Course card image</label>
-            <div class="card">
-              <img src="{{course.imageUrl}}" alt="">
+  <div class="card card-body">
+    <form>
+      <fieldset [disabled]="true">
+        <div class="row">
+          <!-- Left Col -->
+          <div class="col">
+            <div class="form-group">
+              <label for="courseName">Course Name</label>
+              <input type="text" class="form-control" name="courseName" [(ngModel)]="course.name">
+            </div>
+            <div class="form-group">
+              <label for="image">Course card image</label>
+              <div class="gallery">
+                <div *ngFor="let img of course.images">
+                  <img src="{{img}}" alt="">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="instructor">Instructor</label>
-            <select name="instructor">
-              <option value="John">John</option>
-            </select>
+          <!-- Right Col -->
+          <div class="col">
+            <div class="form-group">
+              <label for="courseStatus">Course Status</label>
+              <select name="courseStatus" [(ngModel)]="course.status">
+                <option value=""></option>
+                <option value="DRAFT">DRAFT</option>
+                <option value="PUBLISHED">PUBLISHED</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="instructor">Instructor</label>
+              <select name="instructor">
+                <option value="John">John</option>
+              </select>
+            </div>
           </div>
-        </fieldset>
-      </form>
-
-    </div>
+        </div>
+      </fieldset>
+    </form>
   </div>
 
 </div>

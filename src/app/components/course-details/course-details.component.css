@@ -7,8 +7,13 @@ label {
   color: teal;
 }
 
-.courseDetailsData {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1.5em;
+.gallery {
+  background-color: #eeeeee;
+  display: flex;
+}
+
+.gallery img {
+  height: 5em;
+  margin: 1em 0 1em 1em;
+  width: 5em;
 }
