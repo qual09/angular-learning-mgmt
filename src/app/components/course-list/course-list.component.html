@@ -1,1 +1,63 @@
-<p>course-list works!</p>
+<div class="container">
+
+  <!-- Title -->
+  <div class="row text-center mb-2">
+    <h2>Courses</h2>
+  </div>
+
+  <!-- Course List -->
+  <div class="row">
+    <div class="card card-body">
+
+      <!-- Tools -->
+      <div class="row mb-3 ml-0 courseListTools">
+        <div>
+          Filter by:
+          <select name="filter">
+            <option value="status">Course Status</option>
+          </select>
+          <a href="#">Clear</a>
+        </div>
+        <div class="mr-3">
+          <input type="text" class="form-control" placeholder="Search courses">
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Image</th>
+              <th scope="col">Name</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr [routerLink]="['/courseDetails', 1]">
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>

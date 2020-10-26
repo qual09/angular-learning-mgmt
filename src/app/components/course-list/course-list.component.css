@@ -1,0 +1,22 @@
+.courseListTools {
+  display: flex;
+  justify-content: space-between;
+}
+
+thead {
+  background-color: #eeeeee;
+}
+
+.courseListTools select {
+  display: unset;
+  width: auto;
+}
+
+.courseListTools a {
+  font-weight: bold;
+  margin-left: 0.5em;
+}
+
+.courseListTools input {
+  background-color: #eeeeee;
+}
