@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 import { Course } from '../models/course';
 
 // MOCK
-import { COURSES, COURSE } from '../mocks/mock-courses';
+import { COURSES } from '../mocks/mock-courses';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +36,9 @@ export class CourseService {
   }
 
   getCourseList(): Observable<Course[]> {
-    return of(COURSES); //MOCK
+    //MOCK
+    return of(COURSES);
+
     const url = this.courseListUrl;
     return this.http.get<Course[]>(url).pipe(
       tap(() => console.log('### CourseService ### getCourseList')),
@@ -45,7 +47,10 @@ export class CourseService {
   }
 
   getCourseDetails(id: number): Observable<Course> {
-    return of(COURSE); //MOCK
+    // MOCK
+    const course = COURSES.filter((course) => course.id === id);
+    return of(course[0]);
+
     const url = `${this.courseDetailsUrl}/${id}`;
     return this.http.get<Course>(url).pipe(
       tap(() => console.log('### CourseService ### getCourseDetails')),
