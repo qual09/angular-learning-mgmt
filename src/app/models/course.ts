@@ -7,7 +7,7 @@ export interface Course {
   instructors?: Instructors[],
 }
 
-export interface Instructors {
+interface Instructors {
   name?: string;
   image?: string;
 }
