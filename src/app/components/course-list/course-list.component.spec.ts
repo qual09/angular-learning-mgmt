@@ -34,7 +34,11 @@ describe('CourseListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should have clear button', () => {
-  //   expect(component).toContain('clear');
-  // });
+  it('should have filter by option', () => {
+    const fixture = TestBed.createComponent(CourseListComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.courseListTools div').textContent).toContain('Filter by');
+  });
+
 });
