@@ -30,6 +30,7 @@ export class CourseListComponent implements OnInit {
   clearFilter() {
     this.filterStatusTerm = "";
     this.searchTerm = "";
+    this.search();
   }
 
   search() {

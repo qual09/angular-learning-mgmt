@@ -17,7 +17,7 @@
           <option value="DRAFT">DRAFT</option>
           <option value="PUBLISHED">PUBLISHED</option>
         </select>
-        <a href="#" (click)="clearFilter()">Clear</a>
+        <a href="#" (click)="clearFilter()" *ngIf="filterStatusTerm || searchTerm">Clear</a>
       </div>
       <div class="mr-3">
         <input type="text" class="form-control" placeholder="Search courses" [(ngModel)]="searchTerm"
