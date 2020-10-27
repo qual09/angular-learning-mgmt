@@ -37,9 +37,9 @@
             </div>
             <div class="form-group">
               <label for="instructor">Instructor</label>
-              <select name="instructor">
-                <option value="John">John</option>
-              </select>
+              <div class="instructors">
+                <span *ngFor="let instructor of course.instructors">{{instructor.name}} </span>
+              </div>
             </div>
           </div>
         </div>
