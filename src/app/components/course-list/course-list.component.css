@@ -17,6 +17,10 @@ thead {
   margin-left: 0.5em;
 }
 
+.courseListTools>div {
+  padding: 0.4em;
+}
+
 .statusBox {
   border: 1px solid teal;
   border-radius: 0.2em;
