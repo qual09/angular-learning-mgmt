@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
 import { CourseDetailsComponent } from './course-details.component';
+import { CourseService } from '../../services/course.service';
 
 describe('CourseDetailsComponent', () => {
   let component: CourseDetailsComponent;
@@ -8,9 +12,11 @@ describe('CourseDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CourseDetailsComponent ]
+      declarations: [CourseDetailsComponent],
+      imports: [HttpClientModule, RouterModule.forRoot([])],
+      providers: [CourseService],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
