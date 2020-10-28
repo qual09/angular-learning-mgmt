@@ -13,6 +13,7 @@ export class CourseListComponent implements OnInit {
   courseListFiltered: Course[];
   searchTerm: string;
   filterStatusTerm: string = "";
+  statusList: string[];
 
   constructor(private courseService: CourseService) { }
 
@@ -22,8 +23,17 @@ export class CourseListComponent implements OnInit {
 
   getCourseList() {
     this.courseService.getCourseList().subscribe(result => {
-      this.courseList = result;
-      this.courseListFiltered = result;
+      if (result) {
+        this.courseList = result;
+        this.courseListFiltered = result;
+
+        // Append status list to filter
+        this.statusList = [];
+        result.forEach(course => {
+          if (course.status)
+            this.statusList.push(course.status);
+        });
+      }
     });
   }
 
