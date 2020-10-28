@@ -15,7 +15,6 @@
         <select [(ngModel)]="filterStatusTerm" name="filter">
           <option value="">Course Status</option>
           <option *ngFor="let status of statusList" value="{{status}}">{{status}}</option>
-
           <!-- <option value="DRAFT">DRAFT</option> -->
           <!-- <option value="PUBLISHED">PUBLISHED</option> -->
         </select>

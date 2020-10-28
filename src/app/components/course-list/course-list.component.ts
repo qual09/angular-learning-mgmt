@@ -13,7 +13,7 @@ export class CourseListComponent implements OnInit {
   courseListFiltered: Course[];
   searchTerm: string;
   filterStatusTerm: string = "";
-  statusList: string[];
+  statusList: string[] = [];
 
   constructor(private courseService: CourseService) { }
 
