@@ -14,12 +14,12 @@
         Filter by:
         <select [(ngModel)]="filterStatusTerm" name="filter">
           <option value="">Course Status</option>
-          <option *ngFor="let status of statusList" value="status">{{status}}</option>
+          <option *ngFor="let status of statusList" value="{{status}}">{{status}}</option>
 
           <!-- <option value="DRAFT">DRAFT</option> -->
           <!-- <option value="PUBLISHED">PUBLISHED</option> -->
         </select>
-        <a href="#" (click)="clearFilter()" *ngIf="filterStatusTerm || searchTerm">Clear</a>
+        <a href="#" (click)="clearFilter()" *ngIf="filterStatusTerm || searchTerm">Clear</a> {{filterStatusTerm}}
       </div>
       <div class="mr-3">
         <input type="text" class="form-control" placeholder="Search courses" [(ngModel)]="searchTerm"
