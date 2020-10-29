@@ -30,7 +30,7 @@ export class CourseListComponent implements OnInit {
         // Append status list to filter
         this.statusList = [];
         result.forEach(course => {
-          if (course.status)
+          if (course.status && this.statusList.indexOf(course.status) === -1)
             this.statusList.push(course.status);
         });
       }
